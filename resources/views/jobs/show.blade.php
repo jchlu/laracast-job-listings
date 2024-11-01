@@ -9,7 +9,7 @@
       <div class="px-4 py-5 sm:p-6">
         {{ $job['salary'] }}
       </div>
-      @foreach ($tags as $tag)
+      @foreach ($job['tags'] as $tag)
         <span
           class="inline-flex items-center gap-x-0.5 rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">
           <a href="/tags/{{$tag['id']}}">{{ $tag['name'] }}</a>
