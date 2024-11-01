@@ -14,7 +14,12 @@ Route::get('/about', function () {
 
 Route::get('/jobs', function () {
     return view('jobs', [
-        'jobs' => Job::with('employer')->get(),
+        'jobs' => Job::with('employer')->paginate(5),
+        /* Other more performant pagination options for larger datasets:
+            'jobs' => Job::with('employer')->cursorPaginate(5),
+            'jobs' => Job::with('employer')->simplePaginate(5),
+            ** Amend display code with `php artisan vendor:publish` ***
+        */
     ]);
 });
 
