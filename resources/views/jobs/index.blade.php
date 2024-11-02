@@ -2,8 +2,9 @@
 <x-slot:header>Jobs Page</x-slot:header>
 <h1>Welcome to the Jobs Page!</h1>
 @slot('header')
+Job Listings
 @endslot
-<div class="overflow-hidden rounded-md bg-white shadow">
+<div class="overflow-hidden rounded-md bg-gray-700 shadow">
     <ul role="list" class="divide-y divide-gray-200">
 @foreach ($jobs as $job)
     <a href="/jobs/{{$job['id']}}">

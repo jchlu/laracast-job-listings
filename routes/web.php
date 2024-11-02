@@ -16,7 +16,22 @@ Route::get('/about', fn() => view('about'));
 *  ** Amend display code with `php artisan vendor:publish` ***
 */
 
-Route::get('/jobs', fn() => view('jobs.index', ['jobs' => Job::with('employer')->paginate(5)]));
+Route::post('/jobs', function () {
+    // create a job from the request data AFTER VALIDATION
+    request()->validate([
+        'title' => ['required', 'min:3'],
+        'salary' => ['required']
+    ]);
+
+    Job::create([
+        'title' => request('title'),
+        'salary' => request('salary'),
+        'employer_id' => fake()->numberBetween(1, 20)
+    ]);
+    return redirect('/jobs');
+});
+
+Route::get('/jobs', fn() => view('jobs.index', ['jobs' => Job::with('employer')->latest()->paginate(5)]));
 
 Route::get('/jobs/create', fn() => view('jobs.create'));
 
