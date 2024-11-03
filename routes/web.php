@@ -16,6 +16,7 @@ Route::get('/about', fn() => view('about'));
 *  ** Amend display code with `php artisan vendor:publish` ***
 */
 
+// Create job
 Route::post('/jobs', function () {
     // create a job from the request data AFTER VALIDATION
     request()->validate([
@@ -31,10 +32,33 @@ Route::post('/jobs', function () {
     return redirect('/jobs');
 });
 
+// Update job
+Route::patch('/jobs/{id}', function () {
+    //TODO: Auth
+    // create a job from the request data AFTER VALIDATION
+    request()->validate([
+        'title' => ['required', 'min:3'],
+        'salary' => ['required']
+    ]);
+
+    Job::findOrFail(request('id'))->update([
+        'title' => request('title'),
+        'salary' => request('salary'),
+    ]);
+    return redirect('/jobs/' . request('id'));
+});
+
+// Show all jobs
 Route::get('/jobs', fn() => view('jobs.index', ['jobs' => Job::with('employer')->latest()->paginate(5)]));
 
+// Show create
 Route::get('/jobs/create', fn() => view('jobs.create'));
 
+// Show job
 Route::get('/jobs/{id}', fn($id) => view('jobs.show', ['job' => Job::with('tags')->find($id)]));
 
+// Edit job
+Route::get('/jobs/{id}/edit', fn($id) => view('jobs.edit', ['job' => Job::findOrFail($id)]));
+
+// Show tag
 Route::get('/tags/{id}', fn($id) => view('tags.show', ['tag' => Tag::with('jobs')->find($id)]));
