@@ -7,7 +7,7 @@
     @csrf
     @method('PATCH')
     <div class="space-y-12">
-      <div class="border-b border-white/10 pb-12">
+      <div class="border-b border-white/10 pb-4">
         <div class="mt-10 grid max-w-lg grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
           <div class="sm:col-span-3">
@@ -27,7 +27,7 @@
 
         </div>
       </div>
-<div class="mt-6">
+<div class="mt-2">
 @if($errors->any())
 <ul>
 @foreach ($errors->all() as $error)
@@ -38,10 +38,21 @@
 </div>
     </div>
 
-    <div class="mt-6 flex items-center justify-end gap-x-6">
+
+<div class="flex flex-row justify-between">
+    <div class="flex items-center">
+      <button type="submit" form="delete-form"
+        class="rounded-md border-2 px-3 py-2 text-sm font-semibold text-red-500 shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Delete</button>
+    </div>
+    <div class="flex items-center justify-end gap-x-6">
       <a href="/jobs/{{$job->id}}" class="text-sm/6 font-semibold text-white">Cancel</a>
       <button type="submit"
         class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Save</button>
     </div>
+</div>
   </form>
+<form class="hidden" method="POST" action="/jobs/{{$job->id}}" id="delete-form">
+@csrf
+@method('DELETE')
+</form>
 </x-layout>

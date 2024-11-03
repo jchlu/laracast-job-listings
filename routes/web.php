@@ -48,9 +48,6 @@ Route::patch('/jobs/{id}', function () {
     return redirect('/jobs/' . request('id'));
 });
 
-// Show all jobs
-Route::get('/jobs', fn() => view('jobs.index', ['jobs' => Job::with('employer')->latest()->paginate(5)]));
-
 // Show create
 Route::get('/jobs/create', fn() => view('jobs.create'));
 
@@ -59,6 +56,16 @@ Route::get('/jobs/{id}', fn($id) => view('jobs.show', ['job' => Job::with('tags'
 
 // Edit job
 Route::get('/jobs/{id}/edit', fn($id) => view('jobs.edit', ['job' => Job::findOrFail($id)]));
+
+//TODO: DELETE <-******
+Route::delete('/jobs/{id}', function () {
+    // TODO:Auth
+    Job::findOrFail(request('id'))->delete();
+    return redirect('/jobs');
+});
+
+// Show all jobs
+Route::get('/jobs', fn() => view('jobs.index', ['jobs' => Job::with('employer')->latest()->paginate(5)]));
 
 // Show tag
 Route::get('/tags/{id}', fn($id) => view('tags.show', ['tag' => Tag::with('jobs')->find($id)]));
