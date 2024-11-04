@@ -5,17 +5,8 @@ use App\Models\Job;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => view('home'));
-
-Route::get('/about', fn() => view('about'));
-
-/*
-* Other more performant pagination options for larger datasets:
-*  'jobs' => Job::with('employer')->cursorPaginate(5),
-*  'jobs' => Job::with('employer')->simplePaginate(5),
-*
-*  ** Amend display code with `php artisan vendor:publish` ***
-*/
+Route::view('/', 'home');
+Route::view('/about', ('about'));
 
 // Create job
 Route::post('/jobs', [JobController::class, 'store']);

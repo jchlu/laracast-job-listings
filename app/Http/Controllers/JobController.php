@@ -9,6 +9,14 @@ class JobController extends Controller
 {
     public function index()
     {
+        /*
+            * Other more performant pagination options for larger datasets:
+            *  'jobs' => Job::with('employer')->cursorPaginate(5),
+            *  'jobs' => Job::with('employer')->simplePaginate(5),
+            *
+            *  ** Amend display code with `php artisan vendor:publish` ***
+        */
+
         return view('jobs.index', ['jobs' => Job::with('employer')->latest()->paginate(5)]);
     }
 
@@ -19,7 +27,6 @@ class JobController extends Controller
     }
 
     // Persist job
-
     public function store()
     {
         request()->validate([
@@ -47,7 +54,7 @@ class JobController extends Controller
         return view('jobs.edit', ['job' => Job::findOrFail($id)]);
     }
 
-    //Update
+    //Update job
     public function update(Job $job)
     {
         //TODO: Auth
