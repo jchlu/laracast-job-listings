@@ -52,12 +52,12 @@ Route::patch('/jobs/{id}', function () {
 Route::get('/jobs/create', fn() => view('jobs.create'));
 
 // Show job
-Route::get('/jobs/{id}', fn($id) => view('jobs.show', ['job' => Job::with('tags')->find($id)]));
+Route::get(('/jobs/{job}'), fn(Job $job) => view('jobs.show', ['job' => $job]));
 
 // Edit job
 Route::get('/jobs/{id}/edit', fn($id) => view('jobs.edit', ['job' => Job::findOrFail($id)]));
 
-//TODO: DELETE <-******
+// Delete job
 Route::delete('/jobs/{id}', function () {
     // TODO:Auth
     Job::findOrFail(request('id'))->delete();
@@ -68,4 +68,4 @@ Route::delete('/jobs/{id}', function () {
 Route::get('/jobs', fn() => view('jobs.index', ['jobs' => Job::with('employer')->latest()->paginate(5)]));
 
 // Show tag
-Route::get('/tags/{id}', fn($id) => view('tags.show', ['tag' => Tag::with('jobs')->find($id)]));
+Route::get('/tags/{tag}', fn(Tag $tag) => view('tags.show', ['tag' => $tag]));
