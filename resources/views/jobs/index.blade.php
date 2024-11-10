@@ -1,20 +1,14 @@
 <x-layout>
-<x-slot:header>Jobs Page</x-slot:header>
-<h1>Welcome to the Jobs Page!</h1>
-@slot('header')
-Job Listings
-@endslot
-<div class="overflow-hidden rounded-md bg-gray-700 shadow">
-    <ul role="list" class="divide-y divide-gray-200">
-@foreach ($jobs as $job)
-    <a href="/jobs/{{$job['id']}}">
-    <div>{{$job->employer->name}}</div>
-    <li class="px-6 py-4">
-        {{ $job['title']}}
-    </li>
-    </a>
-@endforeach
-</ul>
+  <x-slot:header>Jobs Page</x-slot:header>
+  <h1>Welcome to the Jobs Page!</h1>
+  @slot('header')
+    Job Listings
+  @endslot
+<div class="mt-6">
+  <div class="grid grid-cols-1 gap-8 bg-gray-400 p-8 sm:grid-cols-2">
+    @foreach ($jobs as $job)
+      <x-jobs.card name='{{ $job->employer->name }}' id='{{ $job->id }}'>{{ $job->title }}</x-jobs.card>
+    @endforeach
+  </div>
 </div>
-<div>{{ $jobs->links() }}</div>
 </x-layout>
