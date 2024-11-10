@@ -4,11 +4,11 @@
   @slot('header')
     Job Listings
   @endslot
-<div class="mt-6">
-  <div class="grid grid-cols-1 gap-8 bg-gray-400 p-8 sm:grid-cols-2">
-    @foreach ($jobs as $job)
-      <x-jobs.card name='{{ $job->employer->name }}' id='{{ $job->id }}'>{{ $job->title }}</x-jobs.card>
-    @endforeach
+  <div class="mt-6">
+    <div class="grid grid-cols-1 gap-8 bg-gray-400 p-8 sm:grid-cols-2">
+      @foreach ($jobs as $job)
+        <x-jobs.card name='{{ $job->employer->name }}' id='{{ $job->id }}'>{{ $job->title }}</x-jobs.card>
+      @endforeach
+    </div>
   </div>
-</div>
 </x-layout>

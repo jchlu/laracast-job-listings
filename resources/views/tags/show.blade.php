@@ -7,12 +7,12 @@
     <div class="px-4 py-5 sm:px-6">
       {{ $tag['name'] }}
       <div class="px-4 py-5 sm:p-6">
-      Jobs with the <strong>{{ $tag['name'] }}</strong> tag:
+        Jobs with the <strong>{{ $tag['name'] }}</strong> tag:
       </div>
       @foreach ($tag['jobs'] as $job)
         <span
           class="inline-flex items-center gap-x-0.5 rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">
-          <a href="/jobs/{{$job['id']}}">{{ $job['title'] }}</a>
+          <a href="/jobs/{{ $job['id'] }}">{{ $job['title'] }}</a>
           <button type="button" class="group relative -mr-1 h-3.5 w-3.5 rounded-sm hover:bg-gray-500/20">
             <span class="sr-only">Remove</span>
             <svg viewBox="0 0 14 14" class="h-3.5 w-3.5 stroke-gray-700/50 group-hover:stroke-gray-700/75">
