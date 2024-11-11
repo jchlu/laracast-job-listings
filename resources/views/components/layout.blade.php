@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-full bg-gray-100">
+<html lang="en" class="h-full bg-my-pink-100">
 
 <head>
   <meta charset="UTF-8">
@@ -9,10 +9,10 @@
 
 <body class="h-full">
   <div class="min-h-full">
-    <div class="bg-gray-800 pb-32">
-      <nav x-data='{ open: false, mobileOpen: false }' class="bg-gray-800">
+    <div class="bg-my-pink-800 pb-32">
+      <nav x-data='{ open: false, mobileOpen: false }' class="bg-my-pink-800">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div class="border-b border-gray-700">
+          <div class="border-b border-my-pink-700">
             <div class="flex h-16 items-center justify-between px-4 sm:px-0">
               <div class="flex items-center">
                 <div class="shrink-0">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="hidden md:block">
                   <div class="ml-10 flex items-baseline space-x-4">
-                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <!-- Current: "bg-my-pink-900 text-white", Default: "text-my-pink-300 hover:bg-my-pink-700 hover:text-white" -->
                     <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                     <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
                     <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
@@ -30,7 +30,7 @@
               <div class="hidden md:block">
                 <div class="ml-4 flex items-center md:ml-6">
                   <button type="button"
-                    class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    class="relative rounded-full bg-my-pink-800 p-1 text-my-pink-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-my-pink-800">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">View notifications</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -44,7 +44,7 @@
                   <div class="relative ml-3">
                     <div>
                       <button type="button"
-                        class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        class="relative flex max-w-xs items-center rounded-full bg-my-pink-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-my-pink-800"
                         id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                         <span class="absolute -inset-1.5"></span>
                         <span class="sr-only">Open user menu</span>
@@ -67,12 +67,12 @@
                     <div x-show="open"
                       class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                       role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                      <!-- Active: "bg-gray-100 outline-none", Not Active: "" -->
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                      <!-- Active: "bg-my-pink-100 outline-none", Not Active: "" -->
+                      <a href="#" class="block px-4 py-2 text-sm text-my-pink-700" role="menuitem" tabindex="-1"
                         id="user-menu-item-0">Your Profile</a>
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                      <a href="#" class="block px-4 py-2 text-sm text-my-pink-700" role="menuitem" tabindex="-1"
                         id="user-menu-item-1">Settings</a>
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                      <a href="#" class="block px-4 py-2 text-sm text-my-pink-700" role="menuitem" tabindex="-1"
                         id="user-menu-item-2">Sign out</a>
                     </div>
                   </div>
@@ -81,7 +81,7 @@
               <div class="-mr-2 flex md:hidden">
                 <!-- Mobile menu button -->
                 <button type="button" @click="mobileOpen = !mobileOpen"
-                  class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  class="relative inline-flex items-center justify-center rounded-md bg-my-pink-800 p-2 text-my-pink-400 hover:bg-my-pink-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-my-pink-800"
                   aria-controls="mobile-menu" aria-expanded="false">
                   <span class="absolute -inset-0.5"></span>
                   <span class="sr-only">Open main menu</span>
@@ -103,21 +103,21 @@
         </div>
 
         <!-- Mobile menu, show/hide based on menu state. -->
-        <div x-show="mobileOpen" class="border-b border-gray-700 md:hidden" id="mobile-menu">
+        <div x-show="mobileOpen" class="border-b border-my-pink-700 md:hidden" id="mobile-menu">
           <div class="space-y-1 px-2 py-3 sm:px-3">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+            <!-- Current: "bg-my-pink-900 text-white", Default: "text-my-pink-300 hover:bg-my-pink-700 hover:text-white" -->
+            <a href="#" class="block rounded-md bg-my-pink-900 px-3 py-2 text-base font-medium text-white"
               aria-current="page">{{ $header }}</a>
             <a href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+              class="block rounded-md px-3 py-2 text-base font-medium text-my-pink-300 hover:bg-my-pink-700 hover:text-white">Team</a>
             <a href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+              class="block rounded-md px-3 py-2 text-base font-medium text-my-pink-300 hover:bg-my-pink-700 hover:text-white">Projects</a>
             <a href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+              class="block rounded-md px-3 py-2 text-base font-medium text-my-pink-300 hover:bg-my-pink-700 hover:text-white">Calendar</a>
             <a href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reports</a>
+              class="block rounded-md px-3 py-2 text-base font-medium text-my-pink-300 hover:bg-my-pink-700 hover:text-white">Reports</a>
           </div>
-          <div class="border-t border-gray-700 pb-3 pt-4">
+          <div class="border-t border-my-pink-700 pb-3 pt-4">
             <div class="flex items-center px-5">
               <div class="shrink-0">
                 <img class="h-10 w-10 rounded-full"
@@ -126,10 +126,10 @@
               </div>
               <div class="ml-3">
                 <div class="text-base/5 font-medium text-white">Tom Cook</div>
-                <div class="text-sm font-medium text-gray-400">tom@example.com</div>
+                <div class="text-sm font-medium text-my-pink-400">tom@example.com</div>
               </div>
               <button type="button"
-                class="relative ml-auto shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                class="relative ml-auto shrink-0 rounded-full bg-my-pink-800 p-1 text-my-pink-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-my-pink-800">
                 <span class="absolute -inset-1.5"></span>
                 <span class="sr-only">View notifications</span>
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -141,12 +141,12 @@
             </div>
             <div class="mt-3 space-y-1 px-2">
               <a href="#"
-                class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Your
+                class="block rounded-md px-3 py-2 text-base font-medium text-my-pink-400 hover:bg-my-pink-700 hover:text-white">Your
                 Profile</a>
               <a href="#"
-                class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
+                class="block rounded-md px-3 py-2 text-base font-medium text-my-pink-400 hover:bg-my-pink-700 hover:text-white">Settings</a>
               <a href="#"
-                class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign
+                class="block rounded-md px-3 py-2 text-base font-medium text-my-pink-400 hover:bg-my-pink-700 hover:text-white">Sign
                 out</a>
             </div>
           </div>
@@ -161,7 +161,7 @@
 
     <main class="-mt-32">
       <div class="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div class="rounded-lg bg-gray-100 px-5 py-6 shadow sm:px-6">
+        <div class="rounded-lg bg-my-pink-100 px-5 py-6 shadow sm:px-6">
           {{ $slot }}
         </div>
       </div>

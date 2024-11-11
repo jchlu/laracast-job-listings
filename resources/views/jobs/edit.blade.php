@@ -3,7 +3,7 @@
   @slot('header')
     Welcome to the Job Edit Page
   @endslot
-  <form class="bg-gray-800" method="POST" action="/jobs/{{ $job->id }}">
+  <form class="bg-my-pink-800" method="POST" action="/jobs/{{ $job->id }}">
     @csrf
     @method('PATCH')
     <div class="space-y-12">

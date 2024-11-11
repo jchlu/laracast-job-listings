@@ -3,7 +3,7 @@
   @slot('header')
     Welcome to the Job Creation Page
   @endslot
-  <form class="bg-gray-800" method="POST" action="/jobs">
+  <form class="bg-my-pink-800" method="POST" action="/jobs">
     @csrf
     <div class="space-y-12">
       <div class="border-b border-white/10 pb-12">
