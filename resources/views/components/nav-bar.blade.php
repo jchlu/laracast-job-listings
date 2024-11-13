@@ -23,7 +23,7 @@
             @auth
               <form action="/logout" method="POST">
                 @csrf
-                <x-button type='submit'>Logout</x-button>
+                <x-nav-link button=true type='submit'>Logout</x-nav-link>
               </form>
             @endauth
             <button type="button"

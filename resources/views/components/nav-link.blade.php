@@ -1,13 +1,12 @@
-@props(['active' => false, 'type' => 'link'])
-@if ($type == 'button')
-  <button type="button"
-    class="rounded bg-indigo-500 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+@props(['active' => false, 'button' => false, 'type' => ''])
+@if ($button)
+  <button type='{{ $type }}'
+    class="rounded bg-my-pink-900 px-1 py-2 text-xs font-semibold text-white shadow-sm hover:bg-my-pink-700">
 @endif
 <a {{ $attributes }}
-  class="{{ $active ? 'bg-my-pink-900 text-white' : 'text-my-pink-300 hover:bg-my-pink-700 hover:text-white' }}
-rounded-md px-3 py-2 text-sm font-medium text-white"
+  class="{{ $active ? 'bg-my-pink-900 text-white' : 'text-my-pink-300 hover:bg-my-pink-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium text-white"
   aria-current="{{ $active ? 'page' : 'false' }}">{{ $slot }}</a>
 
-@if ($type == 'button')
+@if ($button)
   </button>
 @endif
